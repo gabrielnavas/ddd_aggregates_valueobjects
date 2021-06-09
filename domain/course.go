@@ -4,14 +4,17 @@ import "fmt"
 
 /*
 	Course struct is aggregate root
-	Reference struct is value object
+	Reference struct is value object, then it is immutable
 */
+
+// this is an entity
 type Course struct {
 	Id      string
 	Name    string
 	TutorId string
 }
 
+// this is an entity
 type Video struct {
 	Id        string
 	Course    Course
@@ -19,6 +22,7 @@ type Video struct {
 	Reference Reference
 }
 
+// this is an value object
 type Reference struct {
 	author   string
 	bookName string
